@@ -1,5 +1,12 @@
 import * as types from '../constants/ActionTypes';
 
-export default function blog(state, action){
-    
+const intialState = {
+    test: true
+};
+
+export default function BlogReducer(state = intialState, action){
+    switch (action.type){
+        default:
+            return state;
+    }
 }
