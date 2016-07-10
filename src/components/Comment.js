@@ -9,9 +9,22 @@ export default class Comment extends Component {
 
     render(){
         const { comment } = this.props;
+        const posted_at = new Date(comment.posted_at);
         return (
-            <div id={comment.id}>
-                <img src={comment.author.avatar}/>
+            <div className="comment" id={comment.id}>
+                <div className="comment__wrap">
+                    <div className="comment__meta">
+                        <span className="comment__avatar">
+                            <img src={comment.author.avatar}/>
+                        </span>
+                    </div>
+                    <div className="comment__wrap-content">
+                        <h3 className="text-default">{comment.author.display_name}</h3>
+                        <p className="text-small text-no-margin text-faded">{posted_at.toDateString()}</p>
+                        <p dangerouslySetInnerHTML={{__html: comment.body}}></p>
+                    </div>
+                </div>
+                <div className="comment__clean"></div>
             </div>
         )
     }

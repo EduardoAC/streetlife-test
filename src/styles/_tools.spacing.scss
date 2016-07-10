@@ -1,0 +1,12 @@
+@mixin generate-spacing($directions, $dimensions){
+    @each $direction in $directions {
+        @each $key, $val in $dimensions {
+            .spacing-margin-#{$direction}-#{$key} {
+                margin-#{$direction}: #{$val};
+            }
+            .spacing-padding-#{$direction}-#{$key} {
+                padding-#{$direction}: #{$val};
+            }
+        }
+    }
+}

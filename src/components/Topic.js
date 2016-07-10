@@ -14,7 +14,7 @@ export default class Topic extends Component {
     render(){
         const { topic } = this.props;
         return (
-            <div id={topic.slug}>{topic.name}</div>
+            <div className="tag text-faded" id={topic.slug}>{topic.name}</div>
         )
     }
 }

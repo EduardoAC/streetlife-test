@@ -41,22 +41,28 @@ export default class BlogApp extends Component{
         }
 
         return (
-            <article>
-                <h1 className="text-xlarge">Street life test</h1>
-                <section className="posts">
-                {
-                    messages
-                    .filter(item => item.posted_at)
-                    .map((post) => {
-                        return (<PostSummary
-                            key={post.id}
-                            post={post}
-                         />);
-                    })
-                }
-                </section>
-                {isEmpty}
-            </article>
+            <div>
+                <header className="header">
+                    <div className="container">
+                        <h1 className="text-xlarge">Street life test</h1>
+                    </div>
+                    </header>
+                <article className="container">
+                    <section className="posts">
+                    {
+                        messages
+                        .filter(item => item.posted_at)
+                        .map((post) => {
+                            return (<PostSummary
+                                key={post.id}
+                                post={post}
+                             />);
+                        })
+                    }
+                    </section>
+                    {isEmpty}
+                </article>
+            </div>
         );
     }
 }

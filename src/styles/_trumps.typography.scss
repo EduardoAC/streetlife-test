@@ -1,3 +1,6 @@
+.text-small{
+    @include text-small();
+}
 .text-default{
     @include text-default();
 }
@@ -9,4 +12,21 @@
 }
 .text-align-center{
     text-align: center;
+}
+
+.text-highlight {
+    color: $color-primary
+}
+
+.text-semibold{
+    font-weight: 600;
+}
+.text-faded {
+    color: $color-secondary;
+}
+.text-no-margin{
+    margin: 0;
+}
+.text-justify {
+    text-align: justify;
 }

@@ -1,14 +1,23 @@
+//Blue color scale
+$color-blue-lighter: #BAC2FF;
+$color-blue-ligth: 	#4E91FD;
+$color-blue-default: #2C2CFF;
+$color-blue-dark: #0229BF;
+$color-blue-darker: #00059F;
+
+//Grey color scale
 $color-white: #FFFFFF;
-$color-grey-light: #FEFEFE;
-$color-grey-default: #D6D6D6;
-$color-grey-dark: #7C7C7C;
-$color-grey-darker: #2C2C2C;
+$color-grey-light: #BFBFBF;
+$color-grey-default: #969696;
+$color-grey-dark: #7B7D7B;
+$color-grey-darker: #424242;
 $color-black: #000000;
 
-$color-primary: $color-grey-default;
-$color-secondary: $color-grey-light;
+$color-primary: $color-blue-default;
+$color-secondary: $color-grey-default;
+
 $color-bg-content: $color-white;
-$color-border: $color-grey-dark;
-$color-border-hover: $color-grey-darker;
-$color-text-hover: $color-grey-darker;
+$color-border: $color-grey-light;
+$color-border-hover: $color-blue-dark;
+$color-text-hover: $color-blue-dark;
 $color-text: $color-black;
