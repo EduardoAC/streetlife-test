@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DataFetcher from '../actions/DataFetcherActions';
 import * as BlogActions from '../actions/BlogActions';
-import PostList from '../components/PostList'
+import PostSummary from '../components/PostSummary'
 export default class BlogApp extends Component{
     static propTypes = {
         source: PropTypes.string.isRequired,
@@ -42,7 +42,7 @@ export default class BlogApp extends Component{
                     messages
                     .filter(item => item.posted_at)
                     .map((post) => {
-                        return (<PostList
+                        return (<PostSummary
                             key={post.id}
                             post={post}
                          />);
