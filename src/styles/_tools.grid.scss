@@ -1,18 +1,53 @@
 @import "~susy/sass/susy";
 
 @mixin generate-grid($column-number, $breakpoints){
+
+    $breakpoint-name: false;
+    $previous-breakpoint: 0px;
     @each $key, $val in $breakpoints {
+        $breakpoint-name : $key;
+        @if($previous-breakpoint < $val){
+            @media (min-width: $previous-breakpoint) and (max-width: $val - 1){
+                @for $i from 1 through $column-number {
+                    .col-#{$key}-#{$i} {
+                        @include span($i of $column-number);
+                        min-height: 1px;
+                    }
+                }
+
+            }
+        }
+        $previous-breakpoint: $val;
+    }
+    @media (min-width: $previous-breakpoint){
         @for $i from 1 through $column-number {
-            .col-#{$key}-#{$i} {
+            .col-#{$breakpoint-name}-#{$i} {
                 @include span($i of $column-number);
                 min-height: 1px;
             }
         }
+
     }
 }
 
 @mixin generate-container($breakpoints){
-    .container{
-        @include container();
+    @include container();
+    padding: 0 gutter();
+    @include susy-clearfix;
+    @each $key, $val in $breakpoints {
+        @media (min-width: $val) {
+            //Usually this factor we reduce when our break point grows but
+            //I fixed to simplify the system
+            //Ex.in the 768px breakpoint normally we use 720 + glutter
+            //in 992px usually 940px + glutter
+            //or in 1200, we use 1140px + glutter.
+            // it will depends of the layout we build and the designer approach
+            @include container($val * 0.9375);
+        }
     }
+}
+
+@mixin generate-row(){
+    margin: 0 gutter() * -1;
+    @include susy-clearfix;
 }

@@ -1,0 +1,12 @@
+.text-default{
+    @include text-default();
+}
+.text-large{
+    @include text-large();
+}
+.text-xlarge{
+    @include text-xlarge();
+}
+.text-align-center{
+    text-align: center;
+}

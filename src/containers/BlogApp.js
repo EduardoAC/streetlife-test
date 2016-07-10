@@ -28,15 +28,21 @@ export default class BlogApp extends Component{
 
         if(isEmpty){
             return (
-                <div>
-                    <h1>Street life test</h1>
-                    {isEmpty}
+                <div className="overlay">
+                    <div className="overlay__content">
+                        <h1 className="text-xlarge text-align-center">Street life test</h1>
+                        <div className="spinner">
+                            <div className="spinner__cube1"></div>
+                            <div className="spinner__cube2"></div>
+                        </div>
+                    </div>
                 </div>
             );
         }
+
         return (
             <article>
-                <h1>Street life test</h1>
+                <h1 className="text-xlarge">Street life test</h1>
                 <section className="posts">
                 {
                     messages

@@ -1,0 +1,12 @@
+@mixin text-default(){
+    font-size: $global-font-size;
+    line-height: $global-line-height;
+}
+@mixin text-large(){
+    font-size: $global-font-size + 6;
+    line-height: $global-line-height + 6;
+}
+@mixin text-xlarge(){
+    font-size: $global-font-size + 12;
+    line-height: $global-line-height + 12;
+}

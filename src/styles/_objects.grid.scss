@@ -1,2 +1,9 @@
 @include generate-grid($column-number,$breakpoints);
-@include generate-container($breakpoints);
+
+.container{
+    @include generate-container($breakpoints);
+}
+
+.row{
+    @include generate-row();
+}

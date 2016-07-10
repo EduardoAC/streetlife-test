@@ -5,7 +5,7 @@ const intialState = {
 
 export default function BlogReducer(state = intialState, action){
     switch (action.type){
-        case types.OPEN_POST:
+        case types.TOGGLE_COMMENTS:
             return {
                 ...state,
                 postIndex: (action.postIndex >= 0

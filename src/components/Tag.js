@@ -14,7 +14,7 @@ export default class Tag extends Component {
     render(){
         const { tag } = this.props
         return (
-            <div id={tag.id}>{tag.name}</div>
+            <div className="tag" id={tag.id}>{tag.name}</div>
         )
     }
 }

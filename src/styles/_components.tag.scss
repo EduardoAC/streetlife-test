@@ -1,0 +1,20 @@
+/*
+    the idea is use mixin creating a color, font and spacing palette but
+    based on the limited time to complete the excersie, I'm developing only
+    with a subset of the color and font palette.
+*/
+.tag{
+    @include text-default;
+    display: block;
+    float: left;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 3px 6px;
+    border: 1px solid $color-border;
+    color: $color-border;
+    border-radius: 2px;
+}
+.tag:hover{
+    border-color: $color-border-hover;
+    color: $color-border-hover;
+}

@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 
-export function openPost (){
+export function toggleComments (){
     return {
-        type: types.OPEN_POST
+        type: types.TOGGLE_COMMENTS
     }
 }
