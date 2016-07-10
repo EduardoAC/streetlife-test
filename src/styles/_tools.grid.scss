@@ -1,0 +1,18 @@
+@import "~susy/sass/susy";
+
+@mixin generate-grid($column-number, $breakpoints){
+    @each $key, $val in $breakpoints {
+        @for $i from 1 through $column-number {
+            .col-#{$key}-#{$i} {
+                @include span($i of $column-number);
+                min-height: 1px;
+            }
+        }
+    }
+}
+
+@mixin generate-container($breakpoints){
+    .container{
+        @include container();
+    }
+}

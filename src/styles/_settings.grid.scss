@@ -1,0 +1,21 @@
+/*
+Breakpoints defined from Material UI Design,
+https://material.google.com/layout/responsive-ui.html#responsive-ui-breakpoints
+Taken only some of them based on my own criteria based on project in build
+previously and view port size stats
+
+ 0 < 360px - small devices like Iphone 5
+ 360px < 480px - new mobile portrair device like iphone 6, OnePlus One, etc.
+ 480px < 720px - landscape mobile and some of old tablets
+ 720px < 1024px - portrait of most of the tablet, example Ipad Air (768px) and Nexus 10 (800px)
+ 1024px < 1440px - most of the landscape tablets and desktop
+ > 1440px - new screen and laptops with Full HD, etc.
+*/
+$breakpoints: (
+    xxs: 360px,
+    xs: 480px,
+    sm: 720px,
+    md: 1024px,
+    lg: 1440px
+);
+$column-number: 16;

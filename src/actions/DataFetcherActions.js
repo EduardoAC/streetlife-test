@@ -7,10 +7,9 @@ function requestInProgress(json){
 }
 
 function receiveData(json){
-    let data = json;
-
     return {
         type: types.RECEIVE_DATA,
+        data: json
     };
 }
 

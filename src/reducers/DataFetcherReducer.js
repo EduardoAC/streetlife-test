@@ -4,7 +4,7 @@ import assign from 'lodash/object/assign';
 const intialState = {
     isFetching: false,
     didInvalidate: false,
-
+    data: []
 }
 export default function DataFetcher(state = intialState, action){
     switch (action.type){
@@ -17,6 +17,7 @@ export default function DataFetcher(state = intialState, action){
             return Object.assign({},state, {
                 isFetching: false,
                 didInvalidate: false,
+                messages: action.data.messages
             });
         case types.ABORT_REQUEST:
         return Object.assign({}, state, {
