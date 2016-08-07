@@ -1,33 +1,32 @@
 import React, { Component, PropTypes } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as DataFetcher from '../actions/DataFetcherActions';
-import * as BlogActions from '../actions/BlogActions';
-import PostSummary from '../components/PostSummary'
-export default class BlogApp extends Component{
-    static propTypes = {
-        source: PropTypes.string.isRequired,
-        messages: PropTypes.array.isRequired,
-        dispatch: PropTypes.func.isRequired
-    }
 
-    componentDidMount() {
-        const { dispatch } = this.props;
-        dispatch(DataFetcher.fetchDataIfNeeded());
-    }
+import PostSummary from '../components/PostSummary';
 
-    componentWillUnmount() {
-        const { dispatch } = this.props;
-        DataFetcher.invalidateRequest();
-    }
+class BlogApp extends Component {
+  static propTypes = {
+    source: PropTypes.string.isRequired,
+    messages: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired,
+  }
 
-    render(){
-        const { messages, dispatch } = this.props;
-        const isEmpty = messages.length == 0;
-        const actions = bindActionCreators(BlogActions, dispatch);
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(DataFetcher.fetchDataIfNeeded());
+  }
 
-        if(isEmpty){
-            return (
+  componentWillUnmount() {
+    const { dispatch } = this.props;
+    dispatch(DataFetcher.invalidateRequest());
+  }
+
+  render() {
+    const { messages } = this.props;
+    const isEmpty = messages.length === 0;
+
+    if (isEmpty) {
+      return (
                 <div className="overlay">
                     <div className="overlay__content">
                         <h1 className="text-xlarge text-align-center">Street life test</h1>
@@ -38,9 +37,9 @@ export default class BlogApp extends Component{
                     </div>
                 </div>
             );
-        }
+    }
 
-        return (
+    return (
             <div>
                 <header className="header">
                     <div className="container">
@@ -53,7 +52,7 @@ export default class BlogApp extends Component{
                         messages
                         .filter(item => item.posted_at)
                         .map((post) => {
-                            return (<PostSummary
+                          return (<PostSummary
                                 key={post.id}
                                 post={post}
                              />);
@@ -64,14 +63,14 @@ export default class BlogApp extends Component{
                 </article>
             </div>
         );
-    }
+  }
 }
 
 const mapStateToProps = (state) => {
   return {
-      messages: state.DataFetcher.messages || []
-  }
-}
+    messages: state.DataFetcher.messages || [],
+  };
+};
 
 export default connect(
   mapStateToProps
